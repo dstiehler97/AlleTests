@@ -25,3 +25,9 @@ Danach erreichbar unter `https://dstiehler97.github.io/AlleTests/`.
    ```json
    [{ "ordner": "todo", "titel": "To-do", "beschreibung": "Einfache Aufgabenliste" }]
    ```
+
+## Als App installieren (PWA)
+
+Die Startseite ist eine Progressive Web App: Manifest, Icon und Service Worker (offline nutzbar).
+iPhone: Safari → Teilen → „Zum Home-Bildschirm“. Alle Apps unter `apps/` laufen innerhalb dieser einen App.
+Jede App-Seite bindet `assets/pwa.js` ein (siehe Vorlage).
