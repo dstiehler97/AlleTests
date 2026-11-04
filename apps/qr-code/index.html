@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>QR-Code-Generator</title>
+  <meta name="theme-color" content="#111418">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Alle Tests">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+  <script src="../../assets/pwa.js" defer></script>
+  <script src="../../assets/vendor/qrcode.js"></script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    .tabs { display: flex; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 4px; gap: 4px; margin: 16px 0; }
+    .tabs button { flex: 1; font: inherit; font-size: 15px; padding: 9px 4px; border: 0; border-radius: 9px; background: none; color: var(--muted); cursor: pointer; }
+    .tabs button[aria-selected="true"] { background: var(--accent); color: #fff; }
+    .pane { display: none; } .pane.active { display: block; }
+    label { display: block; font-size: .85rem; color: var(--muted); margin: 12px 0 4px; }
+    input, select, textarea { width: 100%; font: inherit; font-size: 17px; padding: 11px 12px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); color: var(--fg); }
+    textarea { min-height: 90px; resize: vertical; }
+    .check { display: flex; align-items: center; gap: 8px; margin-top: 12px; color: var(--fg); font-size: 15px; }
+    .check input { width: auto; }
+    .out { margin-top: 22px; text-align: center; }
+    .qrbox { display: inline-block; background: #fff; padding: 16px; border-radius: 16px; line-height: 0; }
+    .qrbox canvas { width: min(70vw, 280px); height: auto; image-rendering: pixelated; }
+    .hint { color: var(--muted); font-size: .9rem; margin-top: 10px; }
+    .actions { display: flex; gap: 8px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+    .btn { font: inherit; font-size: 16px; border: 0; border-radius: 12px; padding: 12px 18px; background: var(--accent); color: #fff; cursor: pointer; }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+    .saved { margin-top: 28px; }
+    .saved h3 { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 6px; }
+    .saved ul { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .saved li { display: flex; align-items: center; border-top: 1px solid var(--border); }
+    .saved li:first-child { border-top: 0; }
+    .saved .open { flex: 1; min-width: 0; text-align: left; font: inherit; font-size: 16px; padding: 14px; background: none; border: 0; color: var(--fg); cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .saved .del { width: 44px; height: 44px; border: 0; background: none; color: var(--muted); font-size: 18px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../../">← Alle Apps</a>
+    <h1>QR-Code</h1>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" data-tab="text" aria-selected="true">Text / Link</button>
+      <button role="tab" data-tab="wifi" aria-selected="false">WLAN</button>
+      <button role="tab" data-tab="contact" aria-selected="false">Kontakt</button>
+    </div>
+
+    <section class="pane active" id="pane-text">
+      <label for="text">Text oder Link</label>
+      <textarea id="text" placeholder="https://…"></textarea>
+    </section>
+
+    <section class="pane" id="pane-wifi">
+      <label for="ssid">WLAN-Name (SSID)</label>
+      <input id="ssid" autocapitalize="off" autocorrect="off">
+      <label for="wpass">Passwort</label>
+      <input id="wpass" autocapitalize="off" autocorrect="off" spellcheck="false">
+      <label for="wenc">Verschlüsselung</label>
+      <select id="wenc">
+        <option value="WPA">WPA / WPA2 / WPA3</option>
+        <option value="WEP">WEP</option>
+        <option value="nopass">Keine (offen)</option>
+      </select>
+      <label class="check"><input type="checkbox" id="whidden"> Verstecktes Netzwerk</label>
+    </section>
+
+    <section class="pane" id="pane-contact">
+      <label for="cname">Name</label>
+      <input id="cname" autocomplete="name">
+      <label for="cphone">Telefon</label>
+      <input id="cphone" type="tel" autocomplete="tel">
+      <label for="cmail">E-Mail</label>
+      <input id="cmail" type="email" autocomplete="email" autocapitalize="off">
+      <label for="corg">Firma (optional)</label>
+      <input id="corg" autocomplete="organization">
+    </section>
+
+    <div class="out" id="out" hidden>
+      <div class="qrbox"><canvas id="qr"></canvas></div>
+      <div class="hint" id="hint"></div>
+      <div class="actions">
+        <button class="btn" id="share">Teilen / Sichern</button>
+        <button class="btn ghost" id="store">Merken</button>
+      </div>
+    </div>
+
+    <div class="saved" id="saved"></div>
+  </main>
+
+  <script>
+    qrcode.stringToBytes = qrcode.stringToBytesFuncs['UTF-8']; // Umlaute & Emojis
+    const $ = id => document.getElementById(id);
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    let tab = 'text';
+
+    // Sonderzeichen im WLAN-Format maskieren
+    const wifiEsc = s => s.replace(/([\\;,:"])/g, '\\$1');
+    const vEsc = s => s.replace(/([\\;,])/g, '\\$1');
+
+    function payload() {
+      if (tab === 'text') {
+        const t = $('text').value.trim();
+        return t && { data: t, label: t };
+      }
+      if (tab === 'wifi') {
+        const ssid = $('ssid').value; if (!ssid) return null;
+        const enc = $('wenc').value;
+        let s = `WIFI:T:${enc};S:${wifiEsc(ssid)};`;
+        if (enc !== 'nopass') s += `P:${wifiEsc($('wpass').value)};`;
+        if ($('whidden').checked) s += 'H:true;';
+        return { data: s + ';', label: 'WLAN: ' + ssid };
+      }
+      const name = $('cname').value.trim(); if (!name) return null;
+      const lines = ['BEGIN:VCARD', 'VERSION:3.0', `FN:${vEsc(name)}`, `N:${vEsc(name)};;;;`];
+      if ($('cphone').value.trim()) lines.push(`TEL;TYPE=CELL:${$('cphone').value.trim()}`);
+      if ($('cmail').value.trim()) lines.push(`EMAIL:${$('cmail').value.trim()}`);
+      if ($('corg').value.trim()) lines.push(`ORG:${vEsc($('corg').value.trim())}`);
+      lines.push('END:VCARD');
+      return { data: lines.join('\r\n'), label: 'Kontakt: ' + name };
+    }
+
+    let current = null;
+    function draw() {
+      current = payload();
+      $('out').hidden = !current;
+      if (!current) return;
+      let qr;
+      try { qr = qrcode(0, 'M'); qr.addData(current.data); qr.make(); }
+      catch { $('hint').textContent = 'Zu viel Text für einen QR-Code.'; return; }
+      const n = qr.getModuleCount(), scale = 10, size = n * scale;
+      const c = $('qr'); c.width = c.height = size;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, size, size); ctx.fillStyle = '#000';
+      for (let r = 0; r < n; r++) for (let col = 0; col < n; col++)
+        if (qr.isDark(r, col)) ctx.fillRect(col * scale, r * scale, scale, scale);
+      $('hint').textContent = tab === 'wifi' ? 'Mit der Handy-Kamera scannen, um dem WLAN beizutreten.'
+        : tab === 'contact' ? 'Scannen, um den Kontakt zu speichern.' : 'Mit der Handy-Kamera scannen.';
+    }
+
+    // Bild mit weißem Rand erzeugen (für Teilen / Speichern)
+    function exportBlob() {
+      const src = $('qr'), pad = 40, out = document.createElement('canvas');
+      out.width = out.height = src.width + pad * 2;
+      const ctx = out.getContext('2d');
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, out.width, out.height);
+      ctx.drawImage(src, pad, pad);
+      return new Promise(r => out.toBlob(r, 'image/png'));
+    }
+    $('share').addEventListener('click', async () => {
+      const blob = await exportBlob();
+      const file = new File([blob], 'qr-code.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try { await navigator.share({ files: [file], title: current.label }); } catch {}
+      } else {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob); a.download = 'qr-code.png'; a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      }
+    });
+
+    // Gemerkte Codes
+    const KEY = 'qr-code:saved';
+    const getSaved = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; } };
+    const setSaved = v => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch {} renderSaved(); };
+    function snapshot() {
+      const f = {}; document.querySelectorAll(`#pane-${tab} input, #pane-${tab} textarea, #pane-${tab} select`)
+        .forEach(el => f[el.id] = el.type === 'checkbox' ? el.checked : el.value);
+      return f;
+    }
+    $('store').addEventListener('click', () => {
+      if (!current) return;
+      const list = getSaved().filter(s => s.label !== current.label);
+      list.unshift({ label: current.label, tab, fields: snapshot() });
+      setSaved(list.slice(0, 20));
+      $('store').textContent = 'Gemerkt ✓'; setTimeout(() => $('store').textContent = 'Merken', 1500);
+    });
+    function renderSaved() {
+      const list = getSaved();
+      $('saved').innerHTML = list.length ? `<h3>Gemerkt</h3><ul>${list.map((s, i) =>
+        `<li><button class="open" data-i="${i}">${esc(s.label)}</button><button class="del" data-i="${i}" aria-label="Entfernen">✕</button></li>`).join('')}</ul>` : '';
+    }
+    $('saved').addEventListener('click', e => {
+      const i = e.target.dataset.i; if (i === undefined) return;
+      const list = getSaved();
+      if (e.target.classList.contains('del')) { list.splice(i, 1); setSaved(list); return; }
+      const s = list[i]; setTab(s.tab);
+      for (const [id, v] of Object.entries(s.fields)) { const el = $(id); if (el.type === 'checkbox') el.checked = v; else el.value = v; }
+      draw(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function setTab(t) {
+      tab = t;
+      document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === t));
+      document.querySelectorAll('.pane').forEach(p => p.classList.toggle('active', p.id === 'pane-' + t));
+      draw();
+    }
+    document.querySelector('.tabs').addEventListener('click', e => { if (e.target.dataset.tab) setTab(e.target.dataset.tab); });
+    document.querySelectorAll('input, textarea, select').forEach(el => el.addEventListener('input', draw));
+    document.querySelectorAll('select, input[type=checkbox]').forEach(el => el.addEventListener('change', draw));
+
+    renderSaved(); draw();
+  </script>
+</body>
+</html>

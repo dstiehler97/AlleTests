@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Einkaufsliste</title>
+  <meta name="theme-color" content="#111418">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Alle Tests">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+  <script src="../../assets/pwa.js" defer></script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <style>
+    .add { display: flex; gap: 8px; position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 8px 0 12px; }
+    .add input { flex: 1; min-width: 0; font-size: 17px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); color: var(--fg); }
+    .add input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+    .btn { font: inherit; font-size: 16px; border: 0; border-radius: 12px; padding: 12px 16px; background: var(--accent); color: #fff; cursor: pointer; }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); padding: 8px 12px; font-size: 14px; }
+    .group h3 { margin: 18px 0 6px; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    ul { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    li { display: flex; align-items: center; gap: 12px; padding: 0 6px 0 14px; min-height: 52px; border-top: 1px solid var(--border); -webkit-user-select: none; user-select: none; }
+    li:first-child { border-top: 0; }
+    .check { width: 24px; height: 24px; flex: none; border-radius: 50%; border: 2px solid var(--border); display: grid; place-items: center; }
+    li.done .check { background: var(--accent); border-color: var(--accent); }
+    li.done .check::after { content: ""; width: 6px; height: 11px; border: solid #fff; border-width: 0 2px 2px 0; transform: translateY(-1px) rotate(45deg); }
+    .name { flex: 1; font-size: 17px; padding: 14px 0; cursor: pointer; }
+    li.done .name { color: var(--muted); text-decoration: line-through; }
+    .qty { color: var(--muted); font-size: 15px; margin-right: 4px; }
+    .icon-btn { flex: none; width: 40px; height: 40px; border: 0; background: none; color: var(--muted); font-size: 18px; border-radius: 10px; cursor: pointer; }
+    .icon-btn:active { background: var(--border); }
+    .bar { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; gap: 8px; flex-wrap: wrap; }
+    .count { color: var(--muted); font-size: .9rem; }
+    .empty-list { color: var(--muted); text-align: center; padding: 40px 16px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px; }
+    .chip { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--fg); cursor: pointer; }
+    dialog { border: 1px solid var(--border); border-radius: 16px; background: var(--card); color: var(--fg); padding: 18px; width: min(92vw, 380px); }
+    dialog::backdrop { background: rgba(0,0,0,.5); }
+    dialog h2 { margin: 0 0 12px; font-size: 1.1rem; }
+    dialog label { display: block; font-size: .85rem; color: var(--muted); margin: 10px 0 4px; }
+    dialog input, dialog select { width: 100%; font-size: 17px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--fg); }
+    dialog .row { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
+    .danger { color: #e5484d; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../../">← Alle Apps</a>
+    <h1>Einkaufsliste</h1>
+
+    <form class="add" id="addForm" autocomplete="off">
+      <input id="newItem" placeholder="z. B. 2 Milch" enterkeyhint="done" aria-label="Neuer Artikel">
+      <button class="btn" aria-label="Hinzufügen" style="font-size:24px;line-height:1;padding:0 18px">+</button>
+    </form>
+    <div class="chips" id="suggest"></div>
+
+    <div id="list"></div>
+
+    <div class="bar">
+      <span class="count" id="count"></span>
+      <span>
+        <button class="btn ghost" id="clearDone">Erledigte entfernen</button>
+        <button class="btn ghost danger" id="clearAll">Alles löschen</button>
+      </span>
+    </div>
+  </main>
+
+  <dialog id="edit">
+    <form method="dialog" id="editForm">
+      <h2>Artikel bearbeiten</h2>
+      <label for="eName">Name</label>
+      <input id="eName">
+      <label for="eQty">Menge</label>
+      <input id="eQty" placeholder="z. B. 2 oder 500 g">
+      <label for="eCat">Kategorie</label>
+      <select id="eCat"></select>
+      <div class="row">
+        <button class="btn ghost danger" value="delete">Löschen</button>
+        <button class="btn ghost" value="cancel">Abbrechen</button>
+        <button class="btn" value="save">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    // Kategorien in typischer Laden-Reihenfolge
+    const CATS = ['Obst & Gemüse', 'Brot & Backwaren', 'Kühlregal', 'Fleisch & Fisch', 'Tiefkühl', 'Vorrat', 'Süßes & Snacks', 'Getränke', 'Drogerie & Haushalt', 'Sonstiges'];
+    const KEYWORDS = {
+      'Obst & Gemüse': 'apfel äpfel banane birne orange zitrone limette traube beere erdbeer himbeer heidelbeer kiwi mango ananas melone pfirsich tomate gurke salat paprika zwiebel knoblauch kartoffel karotte möhre brokkoli blumenkohl zucchini aubergine pilz champignon spinat lauch porree sellerie kohl avocado ingwer kräuter petersilie basilikum schnittlauch radieschen rucola obst gemüse',
+      'Brot & Backwaren': 'brot brötchen toast baguette croissant brezel laugen semmel kuchen wrap tortilla knäcke',
+      'Kühlregal': 'milch joghurt quark käse butter sahne schmand frischkäse mozzarella feta parmesan ei eier margarine pudding hafermilch skyr tofu',
+      'Fleisch & Fisch': 'fleisch hack hähnchen huhn pute rind schwein wurst salami schinken speck würstchen lachs thunfisch fisch garnele steak schnitzel aufschnitt',
+      'Tiefkühl': 'tiefkühl tk pizza eis pommes fischstäbchen',
+      'Vorrat': 'nudel pasta spaghetti reis mehl zucker salz pfeffer öl essig senf ketchup mayo soße sauce brühe dose konserve linsen bohnen kichererbsen müsli haferflocken cornflakes marmelade honig nutella kaffee tee gewürz backpulver hefe',
+      'Süßes & Snacks': 'schokolade schoko chips keks kekse gummibär bonbon nüsse cracker riegel süß snack popcorn',
+      'Getränke': 'wasser saft cola limo bier wein sekt sprudel eistee getränk',
+      'Drogerie & Haushalt': 'klopapier toilettenpapier küchenrolle taschentuch zahnpasta zahnbürste shampoo duschgel seife deo spülmittel waschmittel müllbeutel schwamm reiniger putzmittel windel creme rasier batterie alufolie frischhaltefolie backpapier'
+    };
+
+    const KEY = 'einkaufsliste:v1';
+    const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } };
+    let state = Object.assign({ items: [], learned: {}, history: {} }, load());
+    const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {} };
+
+    const norm = s => s.trim().toLowerCase();
+    function guessCat(name) {
+      const n = norm(name);
+      if (state.learned[n]) return state.learned[n];
+      // Längstes passendes Stichwort gewinnt ("Reis" -> Vorrat, nicht "eis" -> Tiefkühl).
+      // Zusammengesetzte Wörter: "Vollmilch", "Hähnchenbrust", "Bananen" werden über Anfang/Ende erkannt.
+      let best = 'Sonstiges', bestLen = 0;
+      const words = n.split(/[\s-]+/);
+      for (const [cat, kws] of Object.entries(KEYWORDS))
+        for (const kw of kws.split(' '))
+          if (kw.length > bestLen && words.some(w => w === kw ||
+              ((kw.length >= 3 || kw === 'öl') && (w.endsWith(kw) || (kw.length >= 3 && w.startsWith(kw))))))
+            { best = cat; bestLen = kw.length; }
+      return best;
+    }
+    // "2 Milch", "500g Hack", "Milch x2" -> Menge + Name
+    function parse(text) {
+      let t = text.trim(), qty = '';
+      let m = t.match(/^(\d+[.,]?\d*\s*(?:g|kg|ml|l|x|stk\.?|pck\.?|pkg\.?)?)\s+(.+)$/i);
+      if (m) { qty = m[1]; t = m[2]; }
+      else if ((m = t.match(/^(.+?)\s+(?:x\s*)?(\d+[.,]?\d*\s*(?:g|kg|ml|l|x|stk\.?)?)$/i))) { t = m[1]; qty = m[2]; }
+      return { name: t.charAt(0).toUpperCase() + t.slice(1), qty };
+    }
+
+    const $ = id => document.getElementById(id);
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    function addItem(text) {
+      if (!text.trim()) return;
+      const { name, qty } = parse(text);
+      const existing = state.items.find(i => norm(i.name) === norm(name) && !i.done);
+      if (existing) { if (qty) existing.qty = qty; }
+      else state.items.push({ id: Date.now() + Math.random(), name, qty, cat: guessCat(name), done: false });
+      state.history[norm(name)] = { name, n: (state.history[norm(name)]?.n || 0) + 1 };
+      save(); render();
+    }
+
+    function render() {
+      const open = state.items.filter(i => !i.done), done = state.items.filter(i => i.done);
+      let html = '';
+      for (const cat of CATS) {
+        const items = open.filter(i => i.cat === cat);
+        if (items.length) html += `<div class="group"><h3>${cat}</h3><ul>${items.map(row).join('')}</ul></div>`;
+      }
+      if (done.length) html += `<div class="group"><h3>Im Wagen (${done.length})</h3><ul>${done.map(row).join('')}</ul></div>`;
+      $('list').innerHTML = html || '<div class="empty-list">Die Liste ist leer.<br>Oben etwas eintragen – z. B. „2 Milch“.</div>';
+      $('count').textContent = state.items.length ? `${open.length} offen · ${done.length} erledigt` : '';
+      $('clearDone').hidden = !done.length;
+      $('clearAll').hidden = !state.items.length;
+      renderSuggest();
+    }
+    const row = i => `<li data-id="${i.id}" class="${i.done ? 'done' : ''}">
+        <span class="check" data-act="toggle"></span>
+        <span class="name" data-act="toggle">${esc(i.name)}</span>
+        ${i.qty ? `<span class="qty">${esc(i.qty)}</span>` : ''}
+        <button class="icon-btn" data-act="edit" aria-label="Bearbeiten">⋯</button>
+      </li>`;
+
+    // Häufig gekaufte Artikel, die gerade nicht auf der Liste stehen
+    function renderSuggest() {
+      const onList = new Set(state.items.filter(i => !i.done).map(i => norm(i.name)));
+      const q = norm($('newItem').value);
+      const sug = Object.entries(state.history)
+        .filter(([k]) => !onList.has(k) && (!q || k.includes(q)))
+        .sort((a, b) => b[1].n - a[1].n).slice(0, 8);
+      $('suggest').innerHTML = sug.map(([, v]) => `<button class="chip" type="button">${esc(v.name)}</button>`).join('');
+    }
+
+    $('addForm').addEventListener('submit', e => {
+      e.preventDefault();
+      addItem($('newItem').value);
+      $('newItem').value = '';
+      renderSuggest();
+    });
+    $('newItem').addEventListener('input', renderSuggest);
+    $('suggest').addEventListener('click', e => {
+      if (e.target.classList.contains('chip')) { addItem(e.target.textContent); $('newItem').value = ''; renderSuggest(); }
+    });
+
+    let editing = null;
+    $('list').addEventListener('click', e => {
+      const act = e.target.closest('[data-act]')?.dataset.act;
+      const li = e.target.closest('li'); if (!act || !li) return;
+      const item = state.items.find(i => String(i.id) === li.dataset.id);
+      if (act === 'toggle') { item.done = !item.done; save(); render(); }
+      if (act === 'edit') {
+        editing = item;
+        $('eName').value = item.name; $('eQty').value = item.qty;
+        $('eCat').innerHTML = CATS.map(c => `<option${c === item.cat ? ' selected' : ''}>${c}</option>`).join('');
+        $('edit').showModal();
+      }
+    });
+    $('edit').addEventListener('close', () => {
+      const v = $('edit').returnValue;
+      if (!editing) return;
+      if (v === 'delete') state.items = state.items.filter(i => i !== editing);
+      if (v === 'save' && $('eName').value.trim()) {
+        editing.name = $('eName').value.trim();
+        editing.qty = $('eQty').value.trim();
+        editing.cat = $('eCat').value;
+        state.learned[norm(editing.name)] = editing.cat; // Kategorie für nächstes Mal merken
+      }
+      editing = null; save(); render();
+    });
+
+    $('clearDone').addEventListener('click', () => { state.items = state.items.filter(i => !i.done); save(); render(); });
+    $('clearAll').addEventListener('click', () => {
+      if (confirm('Wirklich die ganze Liste löschen?')) { state.items = []; save(); render(); }
+    });
+
+    render();
+  </script>
+</body>
+</html>

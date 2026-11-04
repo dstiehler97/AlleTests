@@ -1,7 +1,7 @@
 // Service Worker: lädt immer zuerst frisch aus dem Netz (damit Updates sofort da sind)
 // und fällt nur offline auf die gespeicherte Kopie zurück.
-const CACHE = 'alletests-v1';
-const PRECACHE = ['./', 'index.html', 'apps.json', 'assets/style.css', 'assets/pwa.js', 'manifest.webmanifest', 'assets/icons/icon-192.png'];
+const CACHE = 'alletests-v2';
+const PRECACHE = ['./', 'index.html', 'apps.json', 'assets/style.css', 'assets/pwa.js', 'manifest.webmanifest', 'assets/icons/icon-192.png', 'assets/vendor/qrcode.js'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
