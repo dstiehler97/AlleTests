@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alle Tests</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>Alle Tests</h1>
+    <p class="lead">Sammlung meiner WebApps.</p>
+    <div id="apps" class="grid"></div>
+  </main>
+  <script>
+    fetch('apps.json')
+      .then(r => r.json())
+      .then(apps => {
+        const el = document.getElementById('apps');
+        if (!apps.length) {
+          el.outerHTML = '<div class="empty">Noch keine Apps – bald geht\'s los.</div>';
+          return;
+        }
+        el.innerHTML = apps.map(a =>
+          `<a class="card" href="apps/${a.ordner}/"><h2>${a.titel}</h2><p>${a.beschreibung || ''}</p></a>`
+        ).join('');
+      })
+      .catch(() => {
+        document.getElementById('apps').outerHTML = '<div class="empty">apps.json konnte nicht geladen werden.</div>';
+      });
+  </script>
+</body>
+</html>
