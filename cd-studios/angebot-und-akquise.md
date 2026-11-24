@@ -53,3 +53,19 @@ Verbessern:
 6. **Fotografie** als Partnerleistung erwähnen („Fotos auf Wunsch über unsere Partnerfotografin").
 7. Pflege nicht als „optional" formulieren, sondern als Standard nach dem Launch.
 8. Versprechen absichern: „< 1 Sekunde" und „DSGVO-konform" nur, wenn es für jedes Projekt gilt.
+
+## Brief-Vorlage Weingut / Besen
+> Liebe Familie [Name],
+>
+> wir sind Daniel und [Kollege] von CD Studios aus Bretzfeld. Wir bauen Websites für Betriebe aus der Region – und drucken passende Tischaufsteller mit QR-Code selbst im 3D-Drucker.
+>
+> Gerade vor der Besen-Saison fragen Gäste online vor allem drei Dinge: Wann habt ihr offen? Was gibt es zu essen? Wo kann ich euren Wein kaufen? [Konkrete Beobachtung, z. B. „Auf dem Handy ist eure Karte aktuell nur als PDF zu sehen."]
+>
+> Wir würden euch gern zeigen, wie das bei euch aussehen könnte – mit Öffnungszeiten, die ihr selbst ändern könnt, einer Speisekarte fürs Handy und einem Muster-Aufsteller für eure Tische. Unverbindlich, 15 Minuten, gern bei euch vor Ort.
+>
+> Wir melden uns in den nächsten Tagen kurz telefonisch – oder ruft einfach an: [Telefon]
+>
+> Viele Grüße aus Bretzfeld
+> [Namen] · cd-studios.de
+
+Hinweis: Den Anruf im Brief nur ankündigen, wenn ihr vorher persönlich da wart oder eine Beziehung besteht – sonst lieber „Ruft uns gern an" / persönlich vorbeigehen.
