@@ -44,6 +44,6 @@ Kapazität: je ~2 Seiten/Woche pro Person → ~16 Seiten/Monat → ~3 Projekte/M
 
 ## Offen
 - [ ] Homepage cd-studios.de prüfen (Abruf aus der Sitzung bisher nicht möglich)
-- [ ] Pakete und Preise festlegen
-- [ ] Vorlage für Erstansprache
+- [x] Pakete und Preise: Entwurf in `angebot-und-akquise.md`
+- [x] Vorlage für Erstansprache: Entwurf in `angebot-und-akquise.md`
 - [ ] Kosten pro Monat (Hosting, Software, Steuerberater) für Gewinnrechnung
