@@ -1,68 +1,70 @@
 # Leadliste Bretzfeld · Pfedelbach · Öhringen (Stand 24.11.2026)
 
-Quelle: öffentliche Verzeichnisse (Vereinsseite, Hohenlohe-Tourismus, Das Örtliche, Gelbe Seiten, Besen-Kalender, Direktvermarkter-Broschüre 2023).
-Teilweise veraltet – Ort, Betrieb und Website vor Kontakt prüfen. Spalte „Check": mobil? langsam? kein SSL? PDF-Karte? keine Website?
+Websites per Websuche ermittelt (Verzeichnisse, Gästemagazine, Falstaff). Die Seiten selbst konnten aus der Cloud-Sitzung nicht geöffnet werden –
+wer die Seite gebaut hat und wie aktuell sie ist, bitte selbst prüfen (Checkliste unten).
 
-Prio A = Weingut/Besen/Hofladen (Gastro-Paket + Aufsteller + ggf. Shop), B = Gastronomie, C = größerer Betrieb (hat vermutlich Agentur).
+**Interesse** = Einschätzung aus dem, was online auffindbar ist:
+🟢 hoch (keine eigene Website gefunden / nur Verzeichnisse) · 🟡 prüfen (eigene Domain, Zustand unbekannt) · 🔴 gering (moderne Seite / große Betriebe mit Agentur)
 
 ## Bretzfeld
-| Prio | Name | Art | Ort/Hinweis | Check | Status |
+| Name | Art | Ort | Website | Interesse | Hinweis |
 |---|---|---|---|---|---|
-| A | **Die Weingüter Bretzfeld e.V.** | Verein (10 Weingüter) | Vereinsseite wirkt veraltet → Türöffner | | |
-| A | Weingut Birkert / Weinausschank Birkert | Weingut, Ausschank | | | |
-| A | Weingut Borth / Weinstube Borth | Weingut, Weinstube, Hofladen | Adolzfurt | | |
-| A | Weingut (Karl) Busch / Weinstube Busch | Weingut, Weinstube | Dimbach | | |
-| A | Weingut Hammel | Weingut | | | |
-| A | Weingut Mai | Weingut | | | |
-| A | Weingut Müller / Gasthaus Dieter Müller | Weingut, Gasthaus | Geddelsbach | | |
-| A | Weingut Pfisterer | Weingut | | | |
-| A | Weingut Schwab / Weinstube Schwab (Heinz J. Schwab) | Weingut, Hofladen, FeWo | Dimbach | | |
-| A | Hofgut Weibler | Weingut, Metzgerei | Siebeneich | | |
-| A | Weingut Weihbrecht / Weinstube Weihbrecht | Weingut, Weinstube, Zimmer | Schwabbach | | |
-| A | Weingut Scholl (Markus Scholl) | Weingut | | | |
-| A | Weingut Schneckenhof | Weingut | | | |
-| A | Weinstube Lederer | Besen | Ort prüfen | | |
-| C | Weinkellerei Hohenlohe eG | Genossenschaft | | | |
-| B | Hotel Restaurant Rose | Restaurant, Hotel | Weißlensburger Straße | | |
-| B | Gasthaus Löwen | Gasthaus | Bitzfeld, Alte Straße | | |
-| B | Gasthaus Zum Lamm | Gasthaus | | | |
-| B | Wirtshaus / Landhaus Rössle | Gasthaus | Adolzfurter Straße | | |
-| B | Gaststätte & Metzgerei Inge Schmidt | Gaststätte, Metzgerei | Schwabbach | | |
-| B | Restaurant Bahnhof Busch | Restaurant | | | |
-| B | Ristorante Pizza da Rosario | Pizzeria | | | |
-| B | Casa Modena | Restaurant | | | |
-| B | Michels Pizzeria | Pizzeria | | | |
-| B | Crazy Loon | Restaurant | | | |
+| **Wurm** (privat bekannt) | Schornsteinfeger | Dimbach | keine gefunden | 🟢 | warmer Kontakt – erster Termin! |
+| **Die Weingüter Bretzfeld e.V.** | Verein | | weingueter-bretzfeld.de | 🟢 | Einträge wirken veraltet (vor 2021), Türöffner zu allen Mitgliedern |
+| Weingut / Weinausschank Birkert | Weingut, Besen | Unterheimbacher Str. 28 (Adolzfurt) | keine gefunden | 🟢 | nur Falstaff/Verzeichnisse |
+| Weingut Borth / Weinstube Borth | Weingut, Hofladen | Unterheimbacher Str. 35 | weingut-borth.de | 🟡 | |
+| Weingut Karl Busch + Restaurant Bahnhof | Weingut, Vinothek, Restaurant | Dimbach / Bahnhofstr. 23 | keine gefunden | 🟢 | Bundesehrenpreis 2014 – guter Betrieb ohne eigene Seite? |
+| Weingut Hammel | Weingut | | nicht auffindbar | ❔ | evtl. nicht mehr aktiv – Vereinsliste prüfen |
+| Weingut / Weinkellerei Mai | Weingut | Unterheimbach | keine gefunden | 🟢 | Wolfgang Mai |
+| Weingut Müller Schneckenhof | Weingut, Gasthaus | Geddelsbach | weingut-schneckenhof.de | 🟡 | Müller & Schneckenhof = ein Betrieb |
+| Weingut Pfisterer | Weingut | | nicht auffindbar | ❔ | Vereinsliste prüfen |
+| Weingut Heinz J. Schwab | Weingut, Hofladen, FeWo | Dimbach | keine gefunden | 🟢 | Hofladen nur Barzahlung → Shop/Vorbestellung |
+| Hofgut Weibler | Weingut, Ochsen, Events | Siebeneich | weibler.de | 🔴 | aktive, gepflegte Seite (TYPO3, Flyer 2025) |
+| Weingut Weihbrecht / Wein & Bett | Weingut (Bio), Besen, Zimmer | Hauptstr. 20, Schwabbach | weingut-weihbrecht.de | 🟡 | Zimmer über Kurzurlaub.de/Trip.com → Direktbuchung als Argument |
+| Weingut Scholl (Markus Scholl) | Weingut | | nicht gesucht | ❔ | |
+| Weinstube Lederer | Besen | Ort prüfen | nicht gesucht | ❔ | |
+| Weinkellerei Hohenlohe eG | Genossenschaft | | nicht gesucht | 🔴 | groß |
+| Hotel Restaurant Rose | Hotel (4★), Restaurant | Weißlensburger Str. 12, Bitzfeld | keine gefunden | 🟢 | nur Booking/HRS – Direktbuchung! |
+| Landhaus Rössle | Restaurant (Michelin-Guide) | Mainhardter Str. 26 | keine gefunden | 🟡 | gehobene Küche, Seite evtl. vorhanden |
+| Gasthaus Löwen | Gasthaus | Alte Straße, Bitzfeld | nicht gesucht | ❔ | |
+| Gasthaus Zum Lamm | Gasthaus | | nicht gesucht | ❔ | |
+| Gaststätte & Metzgerei Inge Schmidt | Gaststätte | Schwabbach | nicht gesucht | ❔ | |
+| Pizza da Rosario, Casa Modena, Michels Pizzeria, Crazy Loon | Restaurants | | nicht gesucht | ❔ | |
 
 ## Pfedelbach
-| Prio | Name | Art | Ort/Hinweis | Check | Status |
+| Name | Art | Ort | Website | Interesse | Hinweis |
 |---|---|---|---|---|---|
-| A | Weingut Laicher | Weingut, Besen | | | |
-| A | Weingut Ungerer | Weingut, Besen | Renzen | | |
-| A | Obst- und Weinbau Dietz | Besen | Windischenbach | | |
-| A | Rebenhof Kelterstüble / Kelterhotel Fröscher | Weinstube, Hotel | | | |
-| A | Schluchters Weinstube | Weinstube | | | |
-| A | Winzerstube Lösch | Weinstube | Adolzfurter Straße 33 | | |
-| A | Schnapsdrossel | Besen, Weinproben | Pfedelbacher Straße 15 | | |
-| A | Brennereien (über 100 Brennrechte im Ort) | Hofbrennerei | Direktvermarkter-Broschüre Pfedelbach | | |
-| B | Landhotel Küffner | Hotel, Restaurant | | | |
-| B | Zum Lamm | Gasthaus | ggf. identisch mit Bretzfelder Eintrag prüfen | | |
-| B | Hotel Restaurant Bürger Stüble | Hotel, Restaurant | Öhringer Straße 1 | | |
-| B | Bistro-Café-Kiosk am See | Café, Kiosk | Buchhorn | | |
+| Weingut Ungerer | Weingut, Vinothek, Besen | Renzen | keine gefunden | 🟢 | |
+| Obst- und Weinbau Dietz | Besen | Windischenbach | nicht gesucht | ❔ | |
+| Schluchters Weinstube | Weinstube | | nicht gesucht | ❔ | |
+| Winzerstube Lösch | Weinstube | Adolzfurter Str. 33 | nichts gefunden | ❔ | evtl. geschlossen – prüfen |
+| Schnapsdrossel | Besen, Weinproben | Pfedelbacher Str. 15 | dieschnapsdrossel.de | 🟡 | |
+| Hofbrennereien (100+ Brennrechte) | Brennerei | | Direktvermarkter-Broschüre | 🟢 | Online-Verkauf/Shop |
+| Landhotel Küffner | Hotel, Restaurant | Max-Eyth-Str. 8 | landhotel-kueffner.de | 🟡 | |
+| Hotel Restaurant Bürgerstüble | Hotel, Restaurant | Öhringer Str. 1 | keine gefunden | 🟢 | |
+| Bistro-Café-Kiosk am See | Café | Buchhorn | nicht gesucht | ❔ | saisonal |
 
 ## Öhringen
-| Prio | Name | Art | Ort/Hinweis | Check | Status |
+| Name | Art | Ort | Website | Interesse | Hinweis |
 |---|---|---|---|---|---|
-| A | Weinhof Dieroff | Weingut | | | |
-| A | Wiesenkelter | Weinlokal | Verrenberg | | |
-| C | Weingut Fürst Hohenlohe-Oehringen (VDP) | großes Weingut | Verrenberg | | |
-| B | Restaurant Württemberger Hof | Restaurant | Altstadt | | |
-| B | Sinzinger's Krone | Restaurant, Hotel | | | |
-| B | Hohenloher Scheune | Restaurant | | | |
-| B | Brauereigasthof Krone | Gasthaus | Marktstraße 24 | | |
-| B | Balko's HEICamp | Biergarten | | | |
+| Weinhof Dieroff | Weingut | Brunnengasse 13, Michelbach am Wald | keine gefunden | 🟢 | |
+| Weingut Fürst Hohenlohe-Oehringen (inkl. Wiesenkelter) | VDP-Weingut | Verrenberg | (eigene Seite, groß) | 🔴 | Wiesenkelter gehört dazu |
+| Hotel Württemberger Hof | Hotel, Restaurant | Karlsvorstadt 4 | wuerttemberger-hof.de | 🟡 | |
+| Sinzinger's Krone | Hotel, Restaurant | Neuenstadter Str. 101 | sinzingers-krone.de | 🟡 | |
+| Hohenloher Scheune | Saison-Gastro (Mai–Okt) | | hohenloher-scheune.de | 🟡 | |
+| Brauereigasthof Krone | Gasthaus | Marktstr. 24 | nicht gesucht | ❔ | |
+| Balko's HEICamp | Biergarten | | nicht gesucht | ❔ | |
 
-## Noch zu ergänzen
-- Direktvermarkter-Broschüre Hohenlohekreis 2023 (alle Hofläden der drei Orte)
-- Handwerksbetriebe (Gelbe Seiten / IHK) – zweite Welle ab Februar
-- Weitere Pizzerien, Imbisse, Cafés aus Gelbe Seiten (Öhringen ~48, Pfedelbach ~50 Einträge)
+## Korrekturen zur ersten Liste
+- **Weingut Laicher** liegt in Obersulm-Willsbach (nicht Pfedelbach) – Website weingut-laicher.de, ggf. zweite Welle.
+- **Kelterhotel Fröscher / Kelterstüble** liegt in Forchtenberg (nicht Pfedelbach) – gestrichen.
+- **Wiesenkelter** gehört zum Weingut Fürst Hohenlohe-Oehringen.
+
+## Website-Check (2 Minuten pro Betrieb)
+1. Ganz unten im Footer: „Webdesign by …" / „Umsetzung: …"? Sonst im Impressum nachsehen.
+2. Copyright-Jahr und neueste Termine/News – älter als 2 Jahre?
+3. Auf dem Handy öffnen: lesbar, Menü bedienbar, Speisekarte als PDF?
+4. Schloss-Symbol (https) vorhanden?
+5. Baukasten erkennbar (Jimdo, Wix, 1&1/IONOS MyWebsite im Footer oder in der URL)?
+6. Ladezeit: pagespeed.web.dev – Mobil-Wert unter 50 = gutes Argument.
+Bewertung: Agentur genannt + aktuell → 🔴 · Baukasten / veraltet / keine Seite → 🟢
