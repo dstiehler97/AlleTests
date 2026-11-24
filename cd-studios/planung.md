@@ -16,6 +16,8 @@ Alle Zahlen brutto, grobe Planung, keine Steuerberatung.
 
 **Gesamt:** 2026 ≈ 2.059 € · 2027 ≈ 5.401 € · zusammen ≈ 7.460 €
 
+**Anfang 2027:** 3 weitere Kunden sicher (ohne Akquise-Aufwand).
+
 ## Neue Kunden 2027 (Annahme: 3.000 € Projekt, ~70 € Pflege, gleichmäßig über das Jahr)
 
 | Neue Kunden / Monat | Kunden | Projekte | Pflege im Jahr | Umsatz |
@@ -43,7 +45,7 @@ Kapazität: je ~2 Seiten/Woche pro Person → ~16 Seiten/Monat → ~3 Projekte/M
 4. Google-Business-Profil, lokales SEO, Partner (Steuerberater, Fotografen, Texter), Netzwerke (IHK, Gewerbeverein).
 
 ## Ab wann Vollzeit? (grobe Schätzung)
-Annahmen: 3.000 € Projekt, 70 € Pflege, keine Kündigungen, laufende Kosten ~3 € pro Kunde/Monat (Pflege-Marge ~96 %), sonstige Fixkosten inkl. Versicherung ~100 €/Monat (1.200 €/Jahr).
+Annahmen: 3.000 € Projekt, 70 € Pflege, keine Kündigungen, laufende Kosten ~3 € pro Kunde/Monat (Pflege-Marge ~96 %), sonstige Fixkosten inkl. Versicherung ~100 €/Monat (1.200 €/Jahr), Steuer machen wir selbst (kein Steuerberater).
 Vollzeit für eine Person ≈ 60.000 € Gewinn/Jahr (deckt Lebenshaltung, Krankenversicherung, Altersvorsorge, Steuern) → ~62.500 € Umsatz. Beide: ~124.000 € Umsatz.
 Fixkosten von 100 €/Monat sind schon mit 2 Pflegekunden gedeckt.
 
