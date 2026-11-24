@@ -43,8 +43,8 @@ Kapazität: je ~2 Seiten/Woche pro Person → ~16 Seiten/Monat → ~3 Projekte/M
 4. Google-Business-Profil, lokales SEO, Partner (Steuerberater, Fotografen, Texter), Netzwerke (IHK, Gewerbeverein).
 
 ## Ab wann Vollzeit? (grobe Schätzung)
-Annahmen: 3.000 € Projekt, 70 € Pflege, keine Kündigungen, ~15 % Kosten.
-Vollzeit für eine Person ≈ 60.000 € Gewinn/Jahr (deckt Lebenshaltung, Krankenversicherung, Altersvorsorge, Steuern) → ~70.000 € Umsatz. Beide: ~140.000 € Umsatz.
+Annahmen: 3.000 € Projekt, 70 € Pflege, keine Kündigungen, laufende Kosten ~3 € pro Kunde/Monat (Pflege-Marge ~96 %), Fixkosten (Steuerberater, Versicherung, Software) noch offen, geschätzt ~3.000 €/Jahr.
+Vollzeit für eine Person ≈ 60.000 € Gewinn/Jahr (deckt Lebenshaltung, Krankenversicherung, Altersvorsorge, Steuern) → ~63.000–65.000 € Umsatz. Beide: ~125.000 € Umsatz.
 
 | Neue Kunden/Monat | 2027 | 2028 | 2029 | 2030 |
 |---|---|---|---|---|
@@ -52,9 +52,9 @@ Vollzeit für eine Person ≈ 60.000 € Gewinn/Jahr (deckt Lebenshaltung, Krank
 | 2 | ~83.000 € | ~103.000 € | ~123.000 € | ~143.000 € |
 | 3 | ~124.000 € | ~155.000 € | – | – |
 
-- 1 Person Vollzeit: ~35–40 Pflegekunden im Bestand + stabil 1–2 Projekte/Monat. Bei 1 Kunde/Monat ca. 2030, bei 2/Monat ab 2028 denkbar.
-- Beide Vollzeit: ~70–80 Pflegekunden + 2–3 Projekte/Monat. Bei 2 Kunden/Monat ca. 2030, bei 3/Monat ab 2028/29.
-- Sicherheitsziel: laufende Pflege deckt allein die Fixkosten der Person, die wechselt (~70 Pflegekunden à 70 € ≈ 5.000 €/Monat).
+- 1 Person Vollzeit: ~35–40 Pflegekunden im Bestand + stabil 1–2 Projekte/Monat. Bei 1 Kunde/Monat ca. 2029/30, bei 2/Monat ab 2028 denkbar.
+- Beide Vollzeit: ~70–80 Pflegekunden + 2–3 Projekte/Monat. Bei 2 Kunden/Monat ca. 2029/30, bei 3/Monat ab 2028.
+- Sicherheitsziel: laufende Pflege deckt allein die Kosten der Person, die wechselt (~75 Pflegekunden à 67 € netto ≈ 5.000 €/Monat).
 - Zwischenschritt: Stunden im Job reduzieren statt sofort kündigen.
 
 ## Offen
