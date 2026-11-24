@@ -37,13 +37,13 @@ Kapazität: je ~2 Seiten/Woche pro Person → ~16 Seiten/Monat → ~3 Projekte/M
 - Mit Steuerberater klären (am besten noch im Dezember). Nebentätigkeit ggf. beim Arbeitgeber melden.
 
 ## Vorgehen Kundengewinnung 2027
-1. 3 feste Pakete (z. B. 1.000 / 2.500 / 5.000 €) mit festem Pflegetarif (29 / 74 / 150 €/Monat), Pflege fest im Paket.
+1. 3 feste Pakete (z. B. 1.000 / 2.500 / 5.000 €) mit festem Pflegetarif (29 / 79 / 149 €/Monat, wie auf der Website), Pflege fest im Paket.
 2. Referenzen/Testimonials der 2 Bestandskunden + Empfehlungsbonus.
 3. Aktive Ansprache lokaler Betriebe: Ziel ~10 Kontakte/Woche/Person (1–3 % Abschlussquote).
 4. Google-Business-Profil, lokales SEO, Partner (Steuerberater, Fotografen, Texter), Netzwerke (IHK, Gewerbeverein).
 
 ## Offen
-- [ ] Homepage cd-studios.de prüfen (Abruf aus der Sitzung bisher nicht möglich)
+- [x] Homepage geprüft (Leistungen/Betreuung): Feedback in `angebot-und-akquise.md`
 - [x] Pakete und Preise: Entwurf in `angebot-und-akquise.md`
 - [x] Vorlage für Erstansprache: Entwurf in `angebot-und-akquise.md`
 - [ ] Kosten pro Monat (Hosting, Software, Steuerberater) für Gewinnrechnung

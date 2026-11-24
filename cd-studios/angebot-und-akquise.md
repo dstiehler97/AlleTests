@@ -7,17 +7,18 @@ Fotos: Partnerin, rechnet selbst mit dem Kunden ab (nur vermitteln).
 
 | Paket | ab | Umfang | Pflege / Monat |
 |---|---|---|---|
-| **Start** | 1.000 € | 1–3 Seiten, mobil, Impressum/Datenschutz, Google-Profil, Hosting im 1. Jahr | **29 €** Basis: Hosting, Updates, Backups, 30 Min. Änderungen |
-| **Business** | 2.500 € | bis ~8 Seiten, Kontaktformular, SEO-Grundlagen, Google-Business-Optimierung | **74 €** Plus: zusätzlich Monitoring, 1 Std. Änderungen |
-| **Shop** | 5.000 € | Onlineshop, Zahlarten, Produkt-Einrichtung, Rechtstexte | **150 €** Pro: Shop-Updates, Priorität, 3 Std. Änderungen |
+| **Start** | 1.000 € | 1–3 Seiten / Landingpage, mobil, Impressum/Datenschutz, Google-Profil | **29 €** Basis |
+| **Business** | 2.500 € | bis ~8 Seiten, Kontaktformular, SEO-Grundlagen, Google-Business-Optimierung | **79 €** Pflege |
+| **Shop / Web-App** | 5.000 € | Onlineshop oder Web-App, Zahlarten / Logik, Einrichtung | **149 €** Rundum |
 
-Regel: Pflege ist Bestandteil jedes Pakets (Mindestlaufzeit 12 Monate, danach monatlich kündbar).
+Pflegetarife wie auf der Website: Basis ab 29 €, Pflege ab 79 €, Rundum ab 149 €.
+Empfehlung: Pflege nicht „optional", sondern als Standard im Angebot (1. Jahr fest, danach monatlich kündbar).
 
 ## Gastro-Paket „Restaurant Komplett"
 - Website (Start oder Business) + digitale Speisekarte (QR) + **3D-gedruckte Tischaufsteller mit QR-Code**
 - Aufsteller: z. B. ab 150 € (Set) bis 400 € je nach Stückzahl und Design
 - Fotos: Vermittlung an die Fotografin, Abrechnung direkt zwischen Fotografin und Kunde
-- Pflege: Speisekartenänderungen inklusive (z. B. 74 €/Monat)
+- Pflege: Speisekartenänderungen inklusive (Tarif „Pflege", ab 79 €/Monat)
 
 Warum Gastro als erste Nische: ein klar verständliches Problem (veraltete Karte / PDF), schnell greifbares Ergebnis (Aufsteller zum Anfassen), wiederkehrende Änderungen = natürlicher Pflegevertrag, und die Fotografin liefert Mehrwert.
 
@@ -39,3 +40,16 @@ Unaufgeforderte E-Mails an Unternehmen sind in Deutschland nach UWG grundsätzli
 - 10 Kontakte pro Person und Woche (Besuch, Brief, Empfehlung)
 - Jeden Freitag: Liste der Kontakte, Rückmeldungen, nächste Schritte
 - Ziel: 1–3 Abschlüsse pro Monat
+
+## Homepage cd-studios.de – Feedback (Bereich Leistungen & Betreuung)
+Stark: klare Leistungsblöcke, „handgeschrieben, kein Baukasten" als Abgrenzung, konkrete Versprechen (Ladezeit < 1 s), transparente Pflegepreise mit „Beliebt"-Markierung.
+
+Verbessern:
+1. **Projektpreise „ab" zeigen** (Landingpage ab …, Website ab …, Shop ab …). Monatspreise stehen da, Projektpreise nicht – das ist die erste Frage jedes Interessenten.
+2. **Gastro & 3D-Druck ergänzen** – am besten als eigene Unterseite (z. B. /gastro) mit Fotos der Aufsteller. Auf diese Seite verweisen Briefe und Besuche.
+3. **Referenzen** direkt unter den Leistungen: die 2 Kundenprojekte mit Screenshot und einem Satz vom Kunden.
+4. **Ablauf in 3–4 Schritten** (Gespräch → Entwurf → Umsetzung → Launch & Betreuung) nimmt die Unsicherheit.
+5. **Klarer CTA** nach jedem Block: „Kostenloses Erstgespräch" mit direktem Kontakt.
+6. **Fotografie** als Partnerleistung erwähnen („Fotos auf Wunsch über unsere Partnerfotografin").
+7. Pflege nicht als „optional" formulieren, sondern als Standard nach dem Launch.
+8. Versprechen absichern: „< 1 Sekunde" und „DSGVO-konform" nur, wenn es für jedes Projekt gilt.
