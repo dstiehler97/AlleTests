@@ -57,7 +57,7 @@ Verbessern:
 ## Brief-Vorlage Weingut / Besen
 > Liebe Familie [Name],
 >
-> wir sind Daniel und [Kollege] von CD Studios aus Bretzfeld. Wir bauen Websites für Betriebe aus der Region – und drucken passende Tischaufsteller mit QR-Code selbst im 3D-Drucker.
+> wir sind [Name] und [Name] von CD Studios aus Bretzfeld. Wir bauen Websites für Betriebe aus der Region – und drucken passende Tischaufsteller mit QR-Code selbst im 3D-Drucker.
 >
 > Gerade vor der Besen-Saison fragen Gäste online vor allem drei Dinge: Wann habt ihr offen? Was gibt es zu essen? Wo kann ich euren Wein kaufen? [Konkrete Beobachtung, z. B. „Auf dem Handy ist eure Karte aktuell nur als PDF zu sehen."]
 >
