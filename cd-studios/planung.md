@@ -42,6 +42,21 @@ Kapazität: je ~2 Seiten/Woche pro Person → ~16 Seiten/Monat → ~3 Projekte/M
 3. Aktive Ansprache lokaler Betriebe: Ziel ~10 Kontakte/Woche/Person (1–3 % Abschlussquote).
 4. Google-Business-Profil, lokales SEO, Partner (Steuerberater, Fotografen, Texter), Netzwerke (IHK, Gewerbeverein).
 
+## Ab wann Vollzeit? (grobe Schätzung)
+Annahmen: 3.000 € Projekt, 70 € Pflege, keine Kündigungen, ~15 % Kosten.
+Vollzeit für eine Person ≈ 60.000 € Gewinn/Jahr (deckt Lebenshaltung, Krankenversicherung, Altersvorsorge, Steuern) → ~70.000 € Umsatz. Beide: ~140.000 € Umsatz.
+
+| Neue Kunden/Monat | 2027 | 2028 | 2029 | 2030 |
+|---|---|---|---|---|
+| 1 | ~41.500 € | ~51.500 € | ~61.600 € | ~71.700 € |
+| 2 | ~83.000 € | ~103.000 € | ~123.000 € | ~143.000 € |
+| 3 | ~124.000 € | ~155.000 € | – | – |
+
+- 1 Person Vollzeit: ~35–40 Pflegekunden im Bestand + stabil 1–2 Projekte/Monat. Bei 1 Kunde/Monat ca. 2030, bei 2/Monat ab 2028 denkbar.
+- Beide Vollzeit: ~70–80 Pflegekunden + 2–3 Projekte/Monat. Bei 2 Kunden/Monat ca. 2030, bei 3/Monat ab 2028/29.
+- Sicherheitsziel: laufende Pflege deckt allein die Fixkosten der Person, die wechselt (~70 Pflegekunden à 70 € ≈ 5.000 €/Monat).
+- Zwischenschritt: Stunden im Job reduzieren statt sofort kündigen.
+
 ## Offen
 - [x] Homepage geprüft (Leistungen/Betreuung): Feedback in `angebot-und-akquise.md`
 - [x] Pakete und Preise: Entwurf in `angebot-und-akquise.md`
